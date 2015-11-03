@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103202236) do
+ActiveRecord::Schema.define(version: 20151103215411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
-    t.string   "designer"
-    t.boolean  "on_sale",     default: false
+    t.string   "designer_name"
+    t.boolean  "on_sale",       default: false
     t.integer  "designer_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "designers", force: :cascade do |t|
@@ -33,16 +33,16 @@ ActiveRecord::Schema.define(version: 20151103202236) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.string   "designer"
-    t.string   "collection"
+    t.string   "designer_name"
+    t.string   "collection_name"
     t.string   "color"
     t.string   "category"
     t.float    "price"
-    t.boolean  "on_sale",       default: false
+    t.boolean  "on_sale",         default: false
     t.string   "keywords"
     t.integer  "collection_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

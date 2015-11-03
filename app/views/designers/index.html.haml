@@ -1,0 +1,12 @@
+%h1 
+  Designers
+  = link_to 'add designer', new_designer_path
+
+- @designers.each do |designer|
+  %p
+    = designer.name
+  %p
+    - designer.collections.each do |collection|
+      = collection.name
+    = link_to 'remove designer', designer_path(designer), method: :get
+

@@ -1,0 +1,30 @@
+%h1 Edit Product
+
+
+= form_for @product do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :designer_name
+    = f.select :designer_name, Designer.all.collect { |d| [ d.name, d.name ] }, prompt: 'Select Designer'
+  %p
+    = f.label :collection_id
+    = f.select :collection_id, Collection.all.collect { |c| [ c.name, c.id ] }, prompt: 'Select Collection'
+  %p
+    = f.label :color
+    = f.text_field :color
+  %p
+    = f.label :category
+    = f.select :category, options_for_select(['precuts', 'bolt fabric', 'notions', 'patterns', 'kits', 'other'])
+  %p
+    = f.label :price
+    = f.number_field :price
+    per yard
+  %p
+    = f.label :on_sale
+  %p
+    = f.label :keywords
+    = f.text_field :keywords
+  %p
+    = f.submit "submit"

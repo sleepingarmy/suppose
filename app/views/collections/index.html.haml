@@ -1,0 +1,14 @@
+%h1
+  Collections
+  = link_to 'add collection', new_collection_path
+
+- @collections.each do |collection|
+  %p
+    = link_to "#{collection.name}", collection_path(collection)
+    by
+    = link_to "#{collection.get_designer(collection)}", designer_path("#{collection.get_designer(collection)}")
+  %p  
+    - collection.products.each do |product|
+      = product.name
+  %p
+    = link_to 'remove collection', collection_path(collection), method: :delete

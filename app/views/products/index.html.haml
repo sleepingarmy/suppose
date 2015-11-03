@@ -1,0 +1,25 @@
+%h1
+  Products
+  = link_to 'add product', new_product_path
+
+- @products.each do |product|
+  %p
+    = product.name
+    from the 
+    = product.collection.name
+    collection by
+    = product.designer_name
+  %p
+    category:
+    = product.category
+  %p
+    $
+    = product.price
+    per yard
+  %p
+  - if product.on_sale == true
+    = "this item is on sale!"
+  %p
+    = link_to 'edit', edit_product_path(product)
+  %p
+    = link_to 'delete', product_path(product), method: :delete

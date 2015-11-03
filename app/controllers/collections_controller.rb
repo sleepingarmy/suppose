@@ -1,4 +1,5 @@
 class CollectionsController < ApplicationController
+
   def index
     @collections = Collection.all
   end
@@ -8,11 +9,12 @@ class CollectionsController < ApplicationController
   end
 
   def new
+    @designers = Designer.all
     @collection = Collection.new
   end
 
   def create
-    @collection = Colleciton.new(collection_params)
+    @collection = Collection.new(collection_params)
     if @collection.save
       redirect_to collections_path
     else
@@ -41,6 +43,6 @@ class CollectionsController < ApplicationController
 
   private
   def collection_params
-    params.require(:collection).permit(:name, :designer_id)
+    params.require(:collection).permit(:name, :designer_name, :designer_id)
   end
 end

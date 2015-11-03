@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.collection_id = @product.collection.id
     if @product.save
       redirect_to products_path
     else

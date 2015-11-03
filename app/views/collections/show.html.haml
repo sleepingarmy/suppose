@@ -1,0 +1,6 @@
+%h1
+  = @collection.name
+
+  - @collection.products.each do |product|
+    = product.name
+

@@ -1,0 +1,8 @@
+%h1 Add Designer
+
+= form_for @designer do |f|
+
+  = f.label :name
+  = f.text_field :name, placeholder: 'Anna Maria Horner'
+
+  = f.submit "submit"

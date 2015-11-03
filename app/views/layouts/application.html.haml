@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Suppose
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+    / google fonts
+    %link{:href => "https://fonts.googleapis.com/css?family=Bitter:400,700|Playfair+Display:400,900,700|Cabin:400,500,600,700", :rel => "stylesheet", :type => "text/css"}/
+
+  %body
+    %header
+      SUPPOSE
+      = link_to 'designers', designers_path
+      = link_to 'collection', collections_path
+      = link_to 'products', products_path
+
+    = yield
