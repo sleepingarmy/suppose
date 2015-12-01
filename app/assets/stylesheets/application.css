@@ -20,3 +20,13 @@ body {
   margin: 0px;
   position: relative;
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation {
+  display: flex;
+}
+

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/', to: 'products#index'
+  
   resources :designers
   resources :collections
   resources :products

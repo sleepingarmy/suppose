@@ -11,10 +11,34 @@
     %link{:href => "https://fonts.googleapis.com/css?family=Bitter:400,700|Playfair+Display:400,900,700|Cabin:400,500,600,700", :rel => "stylesheet", :type => "text/css"}/
 
   %body
-    %header
-      SUPPOSE
-      = link_to 'designers', designers_path
-      = link_to 'collection', collections_path
-      = link_to 'products', products_path
-
-    = yield
+    %header.container
+      %ul
+        %li
+          %a{:href => "https://www.instagram.com/suppose_quilts/"}
+            facebook
+        %li
+          %a{:href => "https://www.instagram.com/suppose_quilts/"}
+            instagram
+        %li
+          %a{:href => "https://www.instagram.com/suppose_quilts/"}
+            blog
+        %li 
+          contact us
+      %h3 
+        = link_to 'SUPPOSE', "/"
+      .navigation
+        %ul
+          %li
+            = link_to 'products', products_path
+          %li
+            = link_to 'collections', collections_path
+          %li 
+            = link_to 'designers', designers_path
+          %li 
+            etsy
+    %br/
+    %br/
+    
+    / = render partial: "sidebar"
+    .container
+      = yield
