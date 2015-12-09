@@ -1,6 +1,37 @@
-%h1
-  = @collection.name
+.container
+  = render "layouts/sidebar"
 
-  - @collection.products.each do |product|
-    = product.name
+  .column-container
+    %h1
+      = @collection.name
+    %h4
+      by
+      = Designer.find(@collection.designer_id).name
+  
+  .index
+    - @collection.products.each do |product|
+      .thumbnail
+        %p
+          = product.name
+        %p
+          from the 
+          = product.collection.name
+          collection 
+        %p
+          by
+          = product.designer_name
+        %p
+          category:
+          = product.category
+        %p
+          $
+          = product.price
+          per yard
+        %p
+        - if product.on_sale == true
+          = "this item is on sale!"
+        %p
+          = link_to 'edit', edit_product_path(product)
+        %p
+          = link_to 'delete', product_path(product), method: :delete
 

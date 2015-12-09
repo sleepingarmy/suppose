@@ -1,0 +1,15 @@
+.container
+  = render "layouts/sidebar"
+
+  .derp.column-container
+    %h1 
+      New
+
+  .index
+    - @new_collections.each do |collection|
+      .thumbnail
+        %h4
+          = link_to "#{collection.name}", collection_path(collection)
+        %p
+          by
+          = collection.designer.name

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.by_name
   end
 
   def show
@@ -40,8 +40,12 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def sale
+    @sale_products = Product.find_by(on_sale: :true)
+  end
+
   private
   def product_params
-    params.require(:product).permit(:name, :designer, :collection, :color, :category, :price, :on_sale, :keywords, :collection_id)
+    params.require(:product).permit(:name, :designer, :collection, :color, :category, :price, :on_sale, :keywords, :collection_id, :substrate)
   end
 end

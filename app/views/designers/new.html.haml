@@ -1,8 +1,13 @@
-%h1 Add Designer
+.container.designers-new
 
-= form_for @designer do |f|
+  %h1 Add Designer
 
-  = f.label :name
-  = f.text_field :name, placeholder: 'Anna Maria Horner'
+  = form_for @designer do |f|
 
-  = f.submit "submit"
+    = f.label :name
+    = f.text_field :name, placeholder: 'Anna Maria Horner'
+
+    = f.label :bio
+    = f.text_field :bio, placeholder: 'AMH bio'
+
+    = f.submit "submit"

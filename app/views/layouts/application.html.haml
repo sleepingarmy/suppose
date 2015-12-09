@@ -11,34 +11,37 @@
     %link{:href => "https://fonts.googleapis.com/css?family=Bitter:400,700|Playfair+Display:400,900,700|Cabin:400,500,600,700", :rel => "stylesheet", :type => "text/css"}/
 
   %body
-    %header.container
+
+    %header.container.header
       %ul
-        %li
-          %a{:href => "https://www.instagram.com/suppose_quilts/"}
-            facebook
-        %li
-          %a{:href => "https://www.instagram.com/suppose_quilts/"}
-            instagram
-        %li
-          %a{:href => "https://www.instagram.com/suppose_quilts/"}
+        %li.nav-item
+          %a{:href => "http://supposecreatedelight.com/wordpress/", target: "_blank"}
             blog
-        %li 
-          contact us
+        %li.nav-item
+          contact
+        %li.nav-item
+          %a{:href => "https://www.facebook.com/SupposeCreateDelight/", target: "_blank"}
+            facebook
+        %li.nav-item
+          %a{:href => "https://www.instagram.com/suppose_quilts/", target: "_blank"}
+            instagram
       %h3 
-        = link_to 'SUPPOSE', "/"
+        = link_to 'SUPPOSE', home_index_path 
       .navigation
         %ul
-          %li
-            = link_to 'products', products_path
-          %li
+          %li.nav-item
             = link_to 'collections', collections_path
-          %li 
+          %li.nav-item
             = link_to 'designers', designers_path
-          %li 
-            etsy
+          %li.nav-item
+            = link_to 'products', products_path
+          %li.nav-item 
+            = link_to 'etsy', "https://www.etsy.com/shop/suppose", target: "_blank"
     %br/
     %br/
     
     / = render partial: "sidebar"
-    .container
-      = yield
+    
+    = yield
+
+  

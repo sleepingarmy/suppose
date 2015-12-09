@@ -1,10 +1,10 @@
 class DesignersController < ApplicationController
   def index
-    @designers = Designer.all
+    @designers = Designer.all.by_name
   end
 
   def show
-    @designer = Designer.find_by(id: params[:id])
+    @designer = Designer.find(params[:id])
   end
 
   def new
@@ -41,6 +41,6 @@ class DesignersController < ApplicationController
 
   private
   def designer_params
-    params.require(:designer).permit(:name)
+    params.require(:designer).permit(:name, :bio)
   end
 end

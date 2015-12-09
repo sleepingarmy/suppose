@@ -1,0 +1,38 @@
+.container
+  = render "layouts/sidebar"
+
+  .column-container
+    %h1
+      Sale
+  
+  .index
+    - if @sale_products
+      - @sale_products.each do |product|
+        .thumbnail
+          %h4
+            = product.name
+          %p
+            from the 
+            = product.collection.name
+            collection 
+          %p
+            by
+            = product.designer_name
+          %p
+            category:
+            = product.category
+          %p
+            $
+            = product.price
+            per yard
+          %p
+          - if product.on_sale == true
+            = "this item is on sale!"
+          %p
+            = link_to 'edit', edit_product_path(product)
+          %p
+            = link_to 'delete', product_path(product), method: :delete
+    - else
+      %p 
+        There doesn't seem to be anything on sale right now.  Check back soon!
+

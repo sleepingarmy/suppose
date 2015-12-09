@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
 
   def index
-    @collections = Collection.all
+    @collections = Collection.all.by_name
   end
 
   def show
@@ -39,6 +39,10 @@ class CollectionsController < ApplicationController
     @collection = Collection.find_by(id: params[:id])
     @collection.destroy
     redirect_to collections_path
+  end
+
+  def new_arrivals
+    @new_collections = Collection.all.by_date
   end
 
   private

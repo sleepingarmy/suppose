@@ -1,2 +1,10 @@
-%h1 Designers#show
-%p Find me in app/views/designers/show.html.erb
+.center-container
+  %h1
+    = @designer.name
+  %p 
+    = @designer.bio
+
+.container
+  - @designer.collections.each do |collection|
+    %p.thumbnail
+      = link_to "#{collection.name}", collection_path(collection)

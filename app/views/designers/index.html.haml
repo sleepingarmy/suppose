@@ -1,12 +1,22 @@
-%h1 
-  Designers
-  = link_to 'add designer', new_designer_path
+.container
+  = render "layouts/sidebar"
 
-- @designers.each do |designer|
-  %p
-    = designer.name
-  %p
-    - designer.collections.each do |collection|
-      = collection.name
-    = link_to 'remove designer', designer_path(designer), method: :get
+  .derp.column-container
+    %h1 
+      Designers
+    %p
+      = link_to '+ add designer', new_designer_path
+
+  .index
+    - @designers.each do |designer|
+      .thumbnail
+        %h4
+          = link_to "#{designer.name}", designer_path(designer)
+        %p
+          - if designer.collections.any?  
+            - designer.collections.each do |collection|
+              %p
+                = link_to "#{collection.name}", collection_path(collection)
+        %p.remove
+          = link_to 'remove designer', designer_path(designer), method: :delete
 

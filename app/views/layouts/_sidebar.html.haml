@@ -1,8 +1,14 @@
-.container
-  %h1
-    sidebar
-
-  collections
-  designers
-  categories
-  
+.sidebar
+  %ul
+    our fabrics
+    %hr/
+    %li
+      = link_to "collections", collections_path
+    %li
+      = link_to "designers", designers_path
+    %li
+      = link_to 'new!', collections_new_arrivals_path
+    %li
+      = link_to 'sale', products_sale_path
+    %li
+      coming soon

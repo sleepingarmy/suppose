@@ -1,14 +1,22 @@
-%h1
-  Collections
-  = link_to 'add collection', new_collection_path
+.container
+  = render "layouts/sidebar"
 
-- @collections.each do |collection|
-  %p
-    = link_to "#{collection.name}", collection_path(collection)
-    by
-    = link_to "#{collection.get_designer(collection)}", designer_path("#{collection.get_designer(collection)}")
-  %p  
-    - collection.products.each do |product|
-      = product.name
-  %p
-    = link_to 'remove collection', collection_path(collection), method: :delete
+  .derp.column-container
+    %h1
+      Collections
+    %p
+      = link_to '+ add collection', new_collection_path
+
+  .index
+    - @collections.each do |collection|
+      .thumbnail
+        %h4
+          = link_to "#{collection.name}", collection_path(collection)
+          by
+          = link_to "#{collection.get_designer(collection).name}", designer_path("#{collection.get_designer(collection)}")
+        %p  
+          = link_to "view products in this collection", collection_path(collection)
+
+
+        %p
+          = link_to 'remove collection', collection_path(collection), method: :delete

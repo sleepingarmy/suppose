@@ -1,0 +1,19 @@
+<% @comments.each do |comment| %>
+  <p><%= "#{@user.first_name} #{@user.last_name} says \"#{comment.opinion}\" " %></p>
+<% end %>
+<br />
+<%= link_to 'make new comment', new_comment_path(post_id: @post.id, user_id: @user.id) %>
+
+-----------------------------------------------------------
+
+
+
+@user = User.find(@post.user_id)
+
+
+@post = Post.find(@comment.post_id)
+
+
+-------------------------------------------------------------
+
+<%= "#{User.find(comment.user_id).first_name User.find(comment.user_id).last_name}" %>

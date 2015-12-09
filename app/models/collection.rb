@@ -11,6 +11,15 @@ class Collection < ActiveRecord::Base
   end
 
   def get_designer(collection)
-    Designer.find(collection.designer_id).name
+    Designer.find(collection.designer_id)
+  end
+
+  def self.by_name
+    order(:name)
+  end
+
+  def self.by_date
+    # these should also be limited somehow
+    order(:created_at)
   end
 end

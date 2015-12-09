@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get '/', to: 'products#index'
+  get 'home/index'
+  get 'collections/new_arrivals'
+  get 'products/sale'
+
+  root 'home#index'
   
   resources :designers
   resources :collections
