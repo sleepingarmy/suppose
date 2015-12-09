@@ -21,6 +21,16 @@ body {
   position: relative;
 }
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .header {
   background-color: #e0f5ee;
   border-style: solid;
@@ -131,4 +141,31 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+
+footer {
+  background-color: #e0f5ee;
+}
+
+form {
+  margin-top: 10px;
+}
+
+input[type=text] {
+
+}
+
+input[type=submit] {
+  color: black;
+  font-size: 12px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 125px;
+  height: 30px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: white url(image) 0 0 no-repeat; 
+}
+
 

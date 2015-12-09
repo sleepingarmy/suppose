@@ -10,7 +10,7 @@
     / google fonts
     %link{:href => "https://fonts.googleapis.com/css?family=Bitter:400,700|Playfair+Display:400,900,700|Cabin:400,500,600,700", :rel => "stylesheet", :type => "text/css"}/
 
-  %body
+  %body.site
 
     %header.container.header
       %ul
@@ -41,7 +41,16 @@
     %br/
     
     / = render partial: "sidebar"
-    
-    = yield
+    .site-content
+      = yield
 
-  
+    %footer
+      .container
+        %p
+          &copy; Suppose Quilts Inc.
+        %form{:action => ""}
+          %label{:for => "email"}
+            sign up for our newsletter!
+          %input{:type => "email"}/
+          %input.newsletter-submit{:type => "submit", :value => "sign me up!"}/
+
