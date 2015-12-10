@@ -1,2 +1,15 @@
-%h1 Designers#edit
-%p Find me in app/views/designers/edit.html.erb
+.container.designers-edit
+
+  %h1
+    Edit
+    = @designer.name
+
+  = form_for @designer do |f|
+
+    = f.label :name
+    = f.text_field :name, placeholder: 'Anna Maria Horner'
+
+    = f.label :bio
+    = f.text_field :bio, placeholder: 'AMH bio'
+
+    = f.submit "submit"

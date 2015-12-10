@@ -14,10 +14,11 @@
           = link_to "#{product.name}", product_path(product)
         %p
           from the 
-          = product.collection.name
+          = link_to "#{product.collection.name}", collection_path(product.collection)
           collection 
         %p
           by
+          = link_to "#{product.designer.name}", designer_path(product.designer)
           = product.designer_name
         %p
           category:

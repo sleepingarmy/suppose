@@ -22,18 +22,20 @@ body {
 }
 
 .site {
+  display: -webkit-flex;
   display: flex;
   min-height: 100vh;
+  -webkit-flex-direction: column;
   flex-direction: column;
 }
 
 .site-content {
-  flex: 1;
+  -webkit-flex: 1;
 }
 
 .header {
   background-color: #e0f5ee;
-  border-style: solid;
+  border-style: solid;`
   border-width: 1px;
   border-color: teal;
   border-top-style: none;
@@ -43,28 +45,38 @@ body {
   margin-left: 25px;
   margin-right: 15px;
   display: flex;
+  display: -webkit-flex;
+  -webkit-justify-content: space-around;
   justify-content: space-around;
 }
 
 .sidebar {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-basis: 15%;
   flex-basis: 15%;
 }
 
 .center-container {
   margin-left: 50px;
   margin-right: 50px;
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
 .column-container {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 15%;
   flex-basis: 15%;
 }
 
 .navigation {
+  display: -webkit-flex;
   display: flex;
 }
 
@@ -103,8 +115,10 @@ ul {
 .container.home {
   margin-left: 50px;
   margin-right: 50px;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
   background-color: #ccfff5;
 }
 
@@ -113,9 +127,14 @@ ul {
 }
 
 .index {
+  display: -webkit-flex;
   display: flex;
   justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-basis: 70%;
   flex-basis: 70%;
 }
 
@@ -127,6 +146,7 @@ ul {
   margin: 10px;
   padding: 5px 5px 5px 5px;
   z-index: 10;
+  -webkit-flex-basis: 20%;
   flex-basis: 20%;
 }
 
@@ -138,6 +158,7 @@ ul {
 
 
 .products-new {
+  -webkit-flex-direction: column;
   flex-direction: column;
   align-items: center;
 }

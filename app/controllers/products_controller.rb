@@ -22,11 +22,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
+    binding.pry
     if @product.save(product_params)
       redirect_to products_path
     else

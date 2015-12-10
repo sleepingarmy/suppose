@@ -10,8 +10,8 @@ class Collection < ActiveRecord::Base
     end
   end
 
-  def get_designer(collection)
-    Designer.find(collection.designer_id)
+  def designer
+    Designer.find(self.designer_id)
   end
 
   def self.by_name

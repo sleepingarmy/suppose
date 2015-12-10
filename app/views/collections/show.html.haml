@@ -11,7 +11,7 @@
   .index
     - @collection.products.each do |product|
       .thumbnail
-        %p
+        %h4
           = product.name
         %p
           from the 
@@ -19,7 +19,7 @@
           collection 
         %p
           by
-          = product.designer_name
+          = product.designer
         %p
           category:
           = product.category
