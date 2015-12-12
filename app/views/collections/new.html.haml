@@ -1,11 +1,17 @@
-%h1 Add Collections
+.container
+  = render "layouts/sidebar"
 
-= form_for @collection do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :designer_id
-    = f.select :designer_id, Designer.all.collect { |d| [ d.name, d.id ] }, prompt: 'Select Designer'
-  %p
-    = f.submit "submit"
+  .column-container
+    %h1 Add Collections
+
+  .index
+    = form_for @collection do |f|
+      .column-container
+        %br/
+        = f.label :name
+        = f.text_field :name
+      
+        = f.label :designer_id
+        = f.select :designer_id, Designer.all.collect { |d| [ d.name, d.id ] }, prompt: 'Select Designer'
+      
+        = f.submit "submit"

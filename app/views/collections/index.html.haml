@@ -14,9 +14,15 @@
           = link_to "#{collection.name}", collection_path(collection)
           by
           = link_to "#{collection.designer.name}", designer_path(collection.designer)
+          - if collection.designer.company_id
+            %p
+              for 
+              = link_to "#{collection.designer.company.name}"
         %p  
           = link_to "view products in this collection", collection_path(collection)
-
-
-        %p
+        %p.remove
+          = link_to 'edit collection', edit_collection_path(collection)
+  
+        %p.remove
           = link_to 'remove collection', collection_path(collection), method: :delete
+  

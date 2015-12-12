@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'home/index'
   get 'collections/new_arrivals'
   get 'products/sale'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   resources :designers
   resources :collections
   resources :products
+  resources :companies
 
 
   # The priority is based upon order of creation: first created -> highest priority.

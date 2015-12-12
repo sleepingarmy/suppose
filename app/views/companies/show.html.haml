@@ -1,0 +1,8 @@
+.center-container
+  %h1
+    = @company.name
+
+.container
+  - @company.designers.each do |designer|
+    %p.thumbnail
+      = link_to "#{designer.name}", designer_path(designer)

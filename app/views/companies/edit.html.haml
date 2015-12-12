@@ -1,0 +1,10 @@
+.container
+
+  %h1 Edit Company
+
+  = form_for @company do |f|
+
+    = f.label :name
+    = f.text_field :name, placeholder: 'Free Spirit'
+
+    = f.submit "submit"

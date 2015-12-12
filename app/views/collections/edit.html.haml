@@ -1,2 +1,17 @@
-%h1 Collections#edit
-%p Find me in app/views/collections/edit.html.erb
+.container
+  = render "layouts/sidebar"
+
+  .column-container
+    %h1 Edit Collection
+
+  .index
+    = form_for @collection do |f|
+      .column-container
+        %br/
+        = f.label :name
+        = f.text_field :name
+      
+        = f.label :designer_id
+        = f.select :designer_id, Designer.all.collect { |d| [ d.name, d.id ] }, prompt: 'Select Designer'
+      
+        = f.submit "submit"

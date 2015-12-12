@@ -1,0 +1,24 @@
+.container
+  = render "layouts/sidebar"
+
+  .derp.column-container
+    %h1 
+      Companies
+    %p
+      = link_to '+ add company', new_company_path
+
+  .index
+    - @companies.each do |company|
+      .thumbnail
+        %h4
+          = link_to "#{company.name}", company_path(company)
+        %p
+          - if company.designers.any?  
+            - company.designers.each do |designer|
+              %p
+                = link_to "#{designer.name}", designer_path(designer)
+        %p.remove
+          = link_to 'remove company', company_path(company), method: :delete
+        %p.remove
+          = link_to 'edit company', edit_company_path(company)
+

@@ -1,13 +1,23 @@
 .container.designers-new
+  = render "layouts/sidebar"
 
-  %h1 Add Designer
+  .column-container
+    %h1 
+      Add
+      %br/
+      Designer
 
-  = form_for @designer do |f|
+  .index
+    = form_for @designer do |f|
+      .column-container
+        %br/
+        = f.label :name
+        = f.text_field :name, placeholder: 'Anna Maria Horner'
 
-    = f.label :name
-    = f.text_field :name, placeholder: 'Anna Maria Horner'
+        = f.label :bio
+        = f.text_field :bio, placeholder: 'AMH bio'
 
-    = f.label :bio
-    = f.text_field :bio, placeholder: 'AMH bio'
+        = f.label :company_id
+        = f.select :company_id, Company.all.collect { |c| [ c.name, c.id ]}, prompt: 'Select Company'
 
-    = f.submit "submit"
+        = f.submit "submit"

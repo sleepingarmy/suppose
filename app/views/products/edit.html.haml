@@ -22,8 +22,13 @@
     = f.number_field :price
     per yard
   %p
-    = f.label :on_sale
-    = f.hidden_field :on_sale, value: false
+    Is this item on sale?
+  %p
+    = f.label :on_sale, 'Yes'
+    = f.radio_button :on_sale, true, value: true
+  %p
+    = f.label :on_sale, 'No'
+    = f.radio_button :on_sale, false, checked: true, value: false
   %p
     = f.label :keywords
     = f.text_field :keywords
