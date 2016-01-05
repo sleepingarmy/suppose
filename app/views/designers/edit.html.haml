@@ -20,3 +20,4 @@
         = f.select :company_id, Company.all.collect { |c| [ c.name, c.id ]}, prompt: 'Select Company'
         
         = f.submit "submit"
+        

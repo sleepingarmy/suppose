@@ -16,9 +16,12 @@
           - if designer.collections.any?  
             - designer.collections.each do |collection|
               %p
+                - collection.products.each do |product|
+                  %p
+                    = product.name
+              %p
                 = link_to "#{collection.name}", collection_path(collection)
         %p.remove
           = link_to 'remove designer', designer_path(designer), method: :delete
         %p.remove
           = link_to 'edit designer', edit_designer_path(designer)
-
