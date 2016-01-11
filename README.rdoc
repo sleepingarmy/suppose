@@ -1,8 +1,6 @@
 == Suppose Quilt Shop - Retail Web
 
 * Ruby version 2.2.1
-
-* System dependencies
  
 * React in-the-works
 
