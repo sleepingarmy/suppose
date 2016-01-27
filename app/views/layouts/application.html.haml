@@ -12,31 +12,31 @@
 
   %body.site
 
-    %header.container.header
-      %ul
-        %li.nav-item
-          %a{:href => "http://supposecreatedelight.com/wordpress/", target: "_blank"}
-            blog
-        %li.nav-item
-          contact
-        %li.nav-item
-          %a{:href => "https://www.facebook.com/SupposeCreateDelight/", target: "_blank"}
-            facebook
-        %li.nav-item
-          %a{:href => "https://www.instagram.com/suppose_quilts/", target: "_blank"}
-            instagram
-      %h3 
-        = link_to 'SUPPOSE', home_index_path 
-      .navigation
+    %header.container.header.teal
+      .row
         %ul
+          %li.nav-item 
+            = link_to 'etsy', "https://www.etsy.com/shop/suppose", target: "_blank"
           %li.nav-item
-            = link_to 'collections', collections_path
+            %a{:href => "http://supposecreatedelight.com/wordpress/", target: "_blank"}
+              blog
+          %li.nav-item
+            %a{:href => "https://www.facebook.com/SupposeCreateDelight/", target: "_blank"}
+              facebook
+          %li.nav-item
+            %a{:href => "https://www.instagram.com/suppose_quilts/", target: "_blank"}
+              instagram
+        %h1
+          = link_to 'SUPPOSE', home_index_path 
+        %ul.right
+          %li.nav-item
+            = link_to 'products', products_path
           %li.nav-item
             = link_to 'designers', designers_path
           %li.nav-item
-            = link_to 'products', products_path
-          %li.nav-item 
-            = link_to 'etsy', "https://www.etsy.com/shop/suppose", target: "_blank"
+            = link_to 'companies', companies_path
+          %li.nav-item
+            = link_to 'collections', collections_path
     %br/
     %br/
     
@@ -44,7 +44,7 @@
     .site-content
       = yield
 
-    %footer
+    %footer.teal
       .container
         %p
           &copy; Suppose Quilts Inc.

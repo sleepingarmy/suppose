@@ -1,38 +1,40 @@
 .container
   = render "layouts/sidebar"
 
-  .derp.column-container
-    %h1
-      Products
-    %p
-      = link_to ' + add product', new_product_path
+  .column-container
+    .row
+      %h1
+        Products
+      %p
+        = link_to ' + add product', new_product_path
 
-  .index
-    - @products.each do |product|
-      .thumbnail
-        %h4
-          = link_to "#{product.name}", product_path(product)
-        %p
-          from the 
-          = link_to "#{product.collection.name}", collection_path(product.collection)
-          collection 
-        %p
-          by
-          = link_to "#{product.designer.name}", designer_path(product.designer)
-          = product.designer_name
-        %p
-          category:
-          = product.category
-        %p
-          $
-          = product.price
-          per yard
-        %p
-        - if product.on_sale == true
-          = "this item is on sale!"
-        - else
-          =  "not on sale"
-        %p
-          = link_to 'edit', edit_product_path(product)
-        %p
-          = link_to 'delete', product_path(product), method: :delete
+    .row.index
+      - @products.each do |product|
+        .thumbnail
+          %h4
+            = link_to "#{product.name}", product_path(product)
+          %p
+            from the 
+            = link_to "#{product.collection.name}", collection_path(product.collection)
+            collection 
+          %p
+            by
+            = link_to "#{product.designer.name}", designer_path(product.designer)
+            = product.designer_name
+          %p
+            = product.category
+          %p
+            $
+            = product.price
+            per yard
+          %p
+          - if product.on_sale == true
+            = "this item is on sale!"
+          - else
+            =  "not on sale"
+          %p.small
+            = link_to 'edit', edit_product_path(product)
+          %p.small
+            = link_to 'delete', product_path(product), method: :delete
+
+  = render "layouts/rightbar"

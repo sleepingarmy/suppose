@@ -2,22 +2,26 @@
   = render "layouts/sidebar"
 
   .column-container
-    %h1 
-      Add
-      %br/
-      Designer
+    .row
+      %h1 
+        Add Designer
 
-  .index
-    = form_for @designer do |f|
-      .column-container
-        %br/
-        = f.label :name
-        = f.text_field :name, placeholder: 'Anna Maria Horner'
+    .row.index
+      = form_for @designer do |f|
+        .column-container
+          %br/
+          .row
+            = f.label :name
+            = f.text_field :name, placeholder: 'Anna Maria Horner'
 
-        = f.label :bio
-        = f.text_field :bio, placeholder: 'AMH bio'
+          .row
+            = f.label :bio
+            = f.text_field :bio, placeholder: 'AMH bio'
 
-        = f.label :company_id
-        = f.select :company_id, Company.all.collect { |c| [ c.name, c.id ]}, prompt: 'Select Company'
+          .row
+            = f.label :company_id
+            = f.select :company_id, Company.all.collect { |c| [ c.name, c.id ]}, prompt: 'Select Company'
+          .row
+            = f.submit "submit"
 
-        = f.submit "submit"
+  = render "layouts/rightbar"

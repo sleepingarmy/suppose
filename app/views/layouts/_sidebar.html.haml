@@ -1,17 +1,20 @@
-.sidebar
-  %ul
-    our fabrics
-    %hr/
-    %li
-      = link_to "collections", collections_path
-    %li
-      = link_to "designers", designers_path
-    %li
-      = link_to 'companies', companies_path
-    %li
-      = link_to 'new!', collections_new_arrivals_path
-    %li
-      = link_to 'sale', products_sale_path
-    %li
-      coming soon
-      
+.column-container.sidebar
+  %h6.underline
+    SHOP OUR FABRICS
+  %p
+    = link_to 'coming soon', products_coming_soon_path
+  %p
+    = link_to 'new!', products_new_arrivals_path
+  %p
+    = link_to 'companies', companies_path
+  %p
+    = link_to 'designers', designers_path
+  %p
+    = link_to 'collections', collections_path
+  %p
+    = link_to 'precuts', precuts_path
+  %p
+    coming soon - themes!
+  %p
+    = link_to 'sale', products_sale_path
+    

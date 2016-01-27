@@ -1,7 +1,20 @@
-== Suppose Quilt Shop - Retail Web
+== Suppose Quilt Shop
 
-* Ruby version 2.2.1
- 
-* React in-the-works
+Retail web store for Suppose fabric store.
 
-* Lightspeed API integration coming soon
+This is a personal project for me to work on in my spare time.  With this I have been practicing...
+
+* Basic Rails setup
+
+* Flexbox alignment and custom CSS
+
+* Cross-browser styling
+
+Future implementation...
+
+* Redis
+
+* React
+
+* Lightspeed API
+

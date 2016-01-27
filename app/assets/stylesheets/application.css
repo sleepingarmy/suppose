@@ -14,179 +14,84 @@
  *= require_self
  */
 
+ /* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*  end   */
+
+
 
 body {
-  font-family: 'Playfair Display', serif;
-  margin: 0px;
-  position: relative;
+  font-family: 'Cabin', sans-serif;
 }
 
-.site {
-  display: -webkit-flex;
-  display: flex;
-  min-height: 100vh;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-.site-content {
-  -webkit-flex: 1;
-}
-
-.header {
-  background-color: #e0f5ee;
-  border-style: solid;`
-  border-width: 1px;
-  border-color: teal;
-  border-top-style: none;
-}
-
-.container {
-  margin-left: 25px;
-  margin-right: 15px;
-  display: flex;
-  display: -webkit-flex;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-.sidebar {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-basis: 15%;
-  flex-basis: 15%;
-}
-
-.center-container {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.column-container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-basis: 15%;
-  flex-basis: 15%;
-}
-
-.navigation {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.nav-item {
-  border-bottom-color: teal;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-a:hover {
-  color: teal;
-  letter-spacing: 1px;
-}
-
-
-ul {
-  list-style-type: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: small;
-  line-height: 20px;
-  padding-left: 0px;
-}
-
-.sidebar ul {
-  line-height: 40px;
-  padding-left: 40px;
-}
-
-.container.home {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-around;
-  -webkit-justify-content: space-around;
-  background-color: #ccfff5;
-}
-
-.slideshow {
-  width: 80%;
+.thumbnail {
+  margin: 20px 10px 10px 20px;
+  width: 200px;
 }
 
 .index {
-  display: -webkit-flex;
-  display: flex;
-  justify-content: flex-start;
-  -webkit-justify-content: flex-start;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-basis: 70%;
-  flex-basis: 70%;
+  border: 1px solid teal;
 }
 
-
-.thumbnail {
-  border-style: solid;
-  border-width: 1px;
-  border-color: grey;
-  margin: 10px;
-  padding: 5px 5px 5px 5px;
-  z-index: 10;
-  -webkit-flex-basis: 20%;
-  flex-basis: 20%;
+.right {
+  text-align: right;
 }
 
-.remove {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.left {
+  text-align: end;
 }
 
-
-.products-new {
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  align-items: center;
+.center {
+  text-align: center;
 }
 
-footer {
-  background-color: #e0f5ee;
+.underline {
+  border-bottom: 1px solid black;
 }
-
-form {
-  margin-top: 10px;
-}
-
-input[type=text] {
-
-}
-
-input[type=submit] {
-  color: black;
-  font-size: 12px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  letter-spacing: 2px;
-  width: 125px;
-  height: 30px;
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: white url(image) 0 0 no-repeat; 
-}
-
 

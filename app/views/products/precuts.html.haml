@@ -4,25 +4,22 @@
   .column-container
     .row
       %h1
-        = @collection.name
-      %p
-        by
-        = @collection.designer.name
-  
+        Precuts
+
     .row.index
-      - @collection.products.each do |product|
+      - @precuts.each do |product|
         .thumbnail
           %h4
             = link_to "#{product.name}", product_path(product)
           %p
             from the 
-            = product.collection.name
+            = link_to "#{product.collection.name}", collection_path(product.collection)
             collection 
           %p
             by
-            = product.designer
+            = link_to "#{product.designer.name}", designer_path(product.designer)
+            = product.designer_name
           %p
-            category:
             = product.category
           %p
             $
@@ -31,9 +28,11 @@
           %p
           - if product.on_sale == true
             = "this item is on sale!"
+          - else
+            =  "not on sale"
           %p.small
             = link_to 'edit', edit_product_path(product)
           %p.small
-            = link_to 'remove', product_path(product), method: :delete
+            = link_to 'delete', product_path(product), method: :delete
 
   = render "layouts/rightbar"

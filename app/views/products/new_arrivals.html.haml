@@ -4,23 +4,21 @@
   .column-container
     .row
       %h1
-        Sale
+        New Arrivals
     
-    - if @sale_products.count > 0
+    - if @new_arrivals
       .row.index
-        - @sale_products.each do |product|
+        - @new_arrivals.each do |product|
           .thumbnail
             %h4
               = product.name
             %p
-              from the 
+              from
               = product.collection.name
-              collection 
             %p
               by
-              = product.designer_name
+              = product.designer.name
             %p
-              category:
               = product.category
             %p
               $
@@ -35,6 +33,6 @@
               = link_to 'delete', product_path(product), method: :delete
     - else
       %p 
-        There doesn't seem to be anything on sale right now.  Check back soon!
+        There doesn't seem to be anything new right now.  Check back soon!
 
   = render "layouts/rightbar"

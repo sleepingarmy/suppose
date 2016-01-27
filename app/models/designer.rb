@@ -8,7 +8,9 @@ class Designer < ActiveRecord::Base
 
   def company
     if self.company_id
-      Company.find(self.company_id)
+      return Company.find(self.company_id)
+    else
+      return 'no company found'
     end
   end
 end

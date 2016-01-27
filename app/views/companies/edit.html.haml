@@ -1,10 +1,18 @@
 .container
+  = render "layouts/sidebar"
 
-  %h1 Edit Company
+  .column-container
+    .row
+      %h1 
+        Edit
+        = @company.name
 
-  = form_for @company do |f|
+    .row.index
+      = form_for @company do |f|
+        .row
+          = f.label :name
+          = f.text_field :name, placeholder: 'Free Spirit'
+      submit "submit"
 
-    = f.label :name
-    = f.text_field :name, placeholder: 'Free Spirit'
-
-    = f.submit "submit"
+  = render "layouts/rightbar"
+  

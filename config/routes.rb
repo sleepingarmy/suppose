@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'collections/new_arrivals'
   get 'products/sale'
+  get 'products/coming_soon'
+  get 'products/new_arrivals'
+  get 'products/precuts', as: 'precuts'
 
   root 'home#index'
   

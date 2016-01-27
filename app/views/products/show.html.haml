@@ -1,2 +1,24 @@
-%h1 Products#show
-%p Find me in app/views/products/show.html.erb
+.container
+  = render "layouts/sidebar"
+
+  .column-container
+    .row
+      %h1
+        = @product.name
+      %h3
+
+    .row.index
+      .thumbnail
+        %p 
+          = @product.name
+          from the
+        %p
+          = @product.collection.name
+          collection by
+        %p
+          = @product.designer.name
+        %p
+          = link_to 'edit', edit_product_path(@product)
+
+  = render "layouts/rightbar"
+

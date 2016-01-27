@@ -2,17 +2,22 @@
   = render "layouts/sidebar"
 
   .column-container
-    %h1
-      = @designer.name
-    %p
-      = link_to 'edit', edit_designer_path(@designer)
+    .row
+      %h1
+        = @designer.name
+      %p
+        = @designer.company.name
 
-  .container
-    %p 
-      = @designer.bio
-    %p
-      = @designer.company.name
-    %p
-      - @designer.collections.each do |collection|
-        %p.thumbnail
-          = link_to "#{collection.name}", collection_path(collection)
+    - if @designer.collections.any?
+      .row.index
+        - @designer.collections.each do |collection|
+          .thumbnail
+            %h4
+              = link_to "#{collection.name}", collection_path(collection)
+            %p
+              = link_to 'edit', edit_designer_path(@designer)
+    - else
+      %p It looks like thic designer doesn't have any current collections.
+
+  = render "layouts/rightbar"
+  

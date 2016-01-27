@@ -41,10 +41,6 @@ class CollectionsController < ApplicationController
     redirect_to collections_path
   end
 
-  def new_arrivals
-    @new_collections = Collection.all.by_date
-  end
-
   private
   def collection_params
     params.require(:collection).permit(:name, :designer_name, :designer_id)

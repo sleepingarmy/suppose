@@ -1,0 +1,32 @@
+.column-container.sidebar.right
+  / - if @coming_soon.count < 0 
+  %h6.underline
+    COMING SOON
+  %hr/
+  - if @coming_soon.count > 0
+    %p
+      = @coming_soon.first.name.downcase
+    %p
+      = @coming_soon.second.name.downcase
+    %p
+      = @coming_soon.third.name.downcase
+  %p
+    test product
+
+  - if @new_arrivals
+    %h6.underline
+      NEW ARRIVALS
+    %hr/
+    %p
+      = link_to "#{@new_arrivals.first.name}", product_path(@new_arrivals.first)
+    %p
+      link to new product
+    %p
+      another new one
+
+  - if @on_sale
+    %h6.underline
+      SALE PRODUCTS
+    %hr/
+    %p
+      = @on_sale.first.name
