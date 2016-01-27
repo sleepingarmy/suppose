@@ -12,6 +12,9 @@
           = f.label :name
           = f.text_field :name
         %p
+          = f.label :image
+          = f.file_field :image
+        %p
           = f.label :designer_name
           = f.select :designer_name, Designer.all.collect { |d| [ d.name, d.name ] }, prompt: 'Select Designer'
         %p
@@ -46,4 +49,4 @@
 
   
 
-  = render "layouts/leftbar"
+  = render "layouts/rightbar"

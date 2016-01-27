@@ -11,6 +11,8 @@
     .row.index
       - @products.each do |product|
         .thumbnail
+          %p
+            = image_tag product.image.url(:thumb)
           %h4
             = link_to "#{product.name}", product_path(product)
           %p
@@ -22,11 +24,10 @@
             = link_to "#{product.designer.name}", designer_path(product.designer)
             = product.designer_name
           %p
-            = product.category
-          %p
             $
             = product.price
-            per yard
+            - if product.category == 'bolt fabric'
+              per yard
           %p
           - if product.on_sale == true
             = "this item is on sale!"

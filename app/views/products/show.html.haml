@@ -9,6 +9,8 @@
 
     .row.index
       .thumbnail
+        %p
+          = image_tag @product.image.url(:thumb) 
         %p 
           = @product.name
           from the
