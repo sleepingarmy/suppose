@@ -23,8 +23,10 @@
   display: flex;
   -webkit-justify-content: space-around;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   flex-basis: 70%;
+  width: 100%;
 }
 
 .container {

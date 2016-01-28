@@ -18,6 +18,7 @@ class CollectionsController < ApplicationController
     if @collection.save
       redirect_to collections_path
     else
+      flash[:error] = "Could not create collection, please try again."
       render :new
     end
   end

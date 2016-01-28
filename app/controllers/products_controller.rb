@@ -18,7 +18,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.collection_id = @product.collection.id
+    # ternary to set @product.collection_id = @product.collection.id
+    (@product.collection) ? @product.collection_id = @product.collection.id : @product.collection_id = Collection.where(name: blank).id 
+
     if @product.save
       redirect_to products_path
     else

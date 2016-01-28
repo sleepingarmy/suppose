@@ -41,6 +41,9 @@
     %br/
     
     / = render partial: "sidebar"
+    .center.red
+      = flash[:message]
+      = flash[:error]
     .site-content
       = yield
 

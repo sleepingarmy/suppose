@@ -1,10 +1,19 @@
 .container
+  = render "layouts/sidebar"
 
-  %h1 Add Company
+  .column-container
+    .row
+      %h1 Add Company
 
-  = form_for @company do |f|
+    .row.index
+      = form_for @company do |f|
+        .column-container
+          %p all fields are required
+          %br/
+          .row
+            = f.label :name
+            = f.text_field :name, placeholder: 'Free Spirit', required: true
 
-    = f.label :name
-    = f.text_field :name, placeholder: 'Free Spirit'
-
-    = f.submit "submit"
+            = f.submit "submit"
+            
+  = render "layouts/rightbar"

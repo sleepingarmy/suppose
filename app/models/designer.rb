@@ -2,6 +2,9 @@ class Designer < ActiveRecord::Base
   has_many :collections
   belongs_to :company
 
+  validates :name, presence: true
+  validates :company_id, presence: true
+
   def self.by_name
     order(:name)
   end

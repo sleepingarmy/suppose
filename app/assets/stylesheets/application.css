@@ -81,6 +81,7 @@ body {
 
 .right {
   text-align: right;
+  text-align: -webkit-right;
 }
 
 .left {

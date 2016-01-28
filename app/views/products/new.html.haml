@@ -10,16 +10,16 @@
       = form_for @product do |f|
         %p
           = f.label :name
-          = f.text_field :name
+          = f.text_field :name, required: true
         %p
           = f.label :image
           = f.file_field :image
         %p
           = f.label :designer_name
-          = f.select :designer_name, Designer.all.collect { |d| [ d.name, d.name ] }, prompt: 'Select Designer'
+          = f.select :designer_name, Designer.all.collect { |d| [ d.name, d.name ] }
         %p
           = f.label :collection_id
-          = f.select :collection_id, Collection.all.collect { |c| [ c.name, c.id ] }, prompt: 'Select Collection'
+          = f.select :collection_id, Collection.all.collect { |c| [ c.name, c.id ] }
         %p
           = f.label :color
           = f.text_field :color
@@ -31,7 +31,7 @@
           = f.select :status, options_for_select(['coming soon', 'new', 'on sale', 'out of print'])
         %p
           = f.label :price
-          = f.number_field :price
+          = f.number_field :price, required: true
           per yard
         %p
           Is this item on sale?

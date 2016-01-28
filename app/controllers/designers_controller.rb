@@ -16,6 +16,7 @@ class DesignersController < ApplicationController
     if @designer.save
       redirect_to designers_path
     else
+      flash[:error] = "Could not create designer, please try again."
       render :new
     end
   end

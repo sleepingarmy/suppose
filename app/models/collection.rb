@@ -2,6 +2,9 @@ class Collection < ActiveRecord::Base
   belongs_to :designer
   has_many :products
 
+  validates :name, presence: true
+  validates :designer_id, presence: true
+
   # get designer name and assign it to variable?  for collection form
   def designers
     designers = Designer.all

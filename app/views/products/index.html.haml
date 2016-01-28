@@ -5,8 +5,7 @@
     .row
       %h1
         Products
-      %p
-        = link_to ' + add product', new_product_path
+      = link_to ' + add product', new_product_path
 
     .row.index
       - @products.each do |product|
@@ -15,14 +14,20 @@
             = image_tag product.image.url(:thumb)
           %h4
             = link_to "#{product.name}", product_path(product)
-          %p
-            from the 
-            = link_to "#{product.collection.name}", collection_path(product.collection)
-            collection 
-          %p
-            by
-            = link_to "#{product.designer.name}", designer_path(product.designer)
-            = product.designer_name
+
+          - if product.collection_id
+            %p
+              from the 
+              = link_to "#{product.collection.name}", collection_path(product.collection)
+              collection 
+            %p
+              by
+              = link_to "#{product.designer.name}", designer_path(product.designer)
+              = product.designer_name
+          - else
+            %p.small.purple
+              this product does not belong to a collection
+
           %p
             $
             = product.price

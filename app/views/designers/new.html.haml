@@ -12,7 +12,8 @@
           %br/
           .row
             = f.label :name
-            = f.text_field :name, placeholder: 'Anna Maria Horner'
+            = f.text_field :name, placeholder: 'Anna Maria Horner', required: true
+            * required
 
           .row
             = f.label :bio
@@ -21,6 +22,8 @@
           .row
             = f.label :company_id
             = f.select :company_id, Company.all.collect { |c| [ c.name, c.id ]}, prompt: 'Select Company'
+            * required
+            
           .row
             = f.submit "submit"
 

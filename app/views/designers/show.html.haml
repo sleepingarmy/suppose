@@ -5,7 +5,7 @@
     .row
       %h1
         = @designer.name
-      %p
+      %h1
         = @designer.company.name
 
     - if @designer.collections.any?
@@ -14,10 +14,10 @@
           .thumbnail
             %h4
               = link_to "#{collection.name}", collection_path(collection)
-            %p
+            %p.small
               = link_to 'edit', edit_designer_path(@designer)
     - else
-      %p It looks like thic designer doesn't have any current collections.
+      %p It looks like this designer doesn't have any current collections.
 
   = render "layouts/rightbar"
   

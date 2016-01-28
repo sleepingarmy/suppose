@@ -27,8 +27,8 @@ class CompaniesController < ApplicationController
 
   def update
     @company = Company.find(params[:id])
-    if @company.update
-      redirect_to :index
+    if @company.update(company_params)
+      redirect_to companies_path
     else
       render :new
     end

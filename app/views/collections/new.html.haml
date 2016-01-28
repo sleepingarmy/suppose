@@ -8,13 +8,14 @@
     .row.index
       = form_for @collection do |f|
         .column-container
+          %p all fields are required
           %br/
           .row
             = f.label :name
-            = f.text_field :name
+            = f.text_field :name, required: true
           .row
             = f.label :designer_id
-            = f.select :designer_id, Designer.all.collect { |d| [ d.name, d.id ] }, prompt: 'Select Designer'
+            = f.select :designer_id, Designer.all.collect { |d| [ d.name, d.id ] }, {:include_blank => true, :required => true}
           .row
             = f.submit "submit"
 

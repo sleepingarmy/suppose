@@ -14,9 +14,13 @@
         %p 
           = @product.name
           from the
-        %p
-          = @product.collection.name
-          collection by
+        - if @product.collection_id  
+          %p
+            = @product.collection.name
+            collection by
+        - else
+          %p.small.green this product does not belong to a collection
+
         %p
           = @product.designer.name
         %p

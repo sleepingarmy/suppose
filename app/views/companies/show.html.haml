@@ -1,8 +1,15 @@
-.center-container
-  %h1
-    = @company.name
-
 .container
-  - @company.designers.each do |designer|
-    %p.thumbnail
-      = link_to "#{designer.name}", designer_path(designer)
+  = render "layouts/sidebar"
+
+  .column-container
+    .row
+      %h1
+        = @company.name
+
+    .row.index
+      - @company.designers.each do |designer|
+        %p.thumbnail
+          = link_to "#{designer.name}", designer_path(designer)
+
+  = render "layouts/rightbar"
+  
